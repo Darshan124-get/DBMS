@@ -1,0 +1,87 @@
+1.create student table 
+--->create table student(regno number(10),name varchar2(10),dob date ,marks number(5));
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ---------------
+ REGNO                                              NUMBER(10)
+ NAME                                               VARCHAR2(10)
+ DOB                                                DATE
+ MARKS                                              NUMBER(5)
+
+
+2.remove marks from table
+--->alter table student drop column marks;
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- --------------
+ REGNO                                              NUMBER(10)
+ NAME                                               VARCHAR2(10)
+ DOB                                                DATE
+
+
+3.change datatype of regno to varchar2
+--->alter table student modify regno varchar2(5);
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- -------------
+ REGNO                                              VARCHAR2(5)
+ NAME                                               VARCHAR2(10)
+ DOB                                                DATE
+
+
+4.add a new attribute phno
+--->alter table student add phno number(10);
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ------------------
+ REGNO                                              VARCHAR2(5)
+ NAME                                               VARCHAR2(10)
+ DOB                                                DATE
+ PHNO                                               NUMBER(10)
+
+
+5.inser 5 tuples
+insert into student values('100','aaa','01-jan-2002',22222);
+insert into student values('102','bbb','01-feb-2003',33333);
+insert into student values('103','ccc','01-mar-2004',44444);
+insert into student values('104','ddd','01-apr-2005',55555);
+insert into student values('105','eee','01-may-2006',66666);
+
+
+SQL> insert into student values('100','aaa','01-jan-2002',22222);
+
+1 row created.
+
+SQL> insert into student values('102','bbb','01-feb-2003',33333);
+
+1 row created.
+
+SQL> insert into student values('103','ccc','01-mar-2004',44444);
+
+1 row created.
+
+SQL> insert into student values('104','ddd','01-apr-2005',55555);
+
+1 row created.
+
+SQL> insert into student values('105','eee','01-may-2006',66666);
+
+1 row created.
+
+
+6.display student table
+--->select * from student;
+
+SQL> select * from student;
+
+REGNO NAME       DOB             PHNO
+----- ---------- --------- ----------
+100   aaa        01-JAN-02      22222
+102   bbb        01-FEB-03      33333
+103   ccc        01-MAR-04      44444
+104   ddd        01-APR-05      55555
+105   eee        01-MAY-06      66666

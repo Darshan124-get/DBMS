@@ -1,0 +1,119 @@
+1.create library 
+--->create table library(bid number(4) primary key , title varchar2(10),author varchar2(10),publisher varchar2(10), yop number(5),price number(5)); 
+
+SQL> desc library;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- --------------
+ BID                                       NOT NULL NUMBER(4)
+ TITLE                                              VARCHAR2(10)
+ AUTHOR                                             VARCHAR2(10)
+ PUBLISHER                                          VARCHAR2(10)
+ YOP                                                NUMBER(5)
+ PRICE                                              NUMBER(5)    
+
+
+2.insert 5 tuples
+
+insert into library values(100,'c prog','shrikanth','shiva',2001,234);
+insert into library values(102,'cpp prog','shilpa','latha',2002,365);
+insert into library values(103,'java','shrikanth','surbhi',2003,145);
+insert into library values(104,'data str','nirmala','shiva',2004,89);
+insert into library values(105,'dot net','lekha','surya',2005,456);
+
+
+SQL> insert into library values(100,'c prog','shrikanth','shiva',2001,234);
+
+1 row created.
+
+SQL> insert into library values(102,'cpp prog','shilpa','latha',2002,365);
+
+1 row created.
+
+SQL> insert into library values(103,'java','shrikanth','surbhi',2003,145);
+
+1 row created.
+
+SQL> insert into library values(104,'data str','nirmala','shiva',2004,89);
+
+1 row created.
+
+SQL> insert into library values(105,'dot net','lekha','surya',2005,456);
+
+1 row created.
+
+
+3.display table
+--->select * from library;
+
+
+SQL> select * from library;
+
+       BID TITLE      AUTHOR     PUBLISHER         YOP      PRICE
+---------- ---------- ---------- ---------- ---------- ----------
+       100 c prog     shrikanth  shiva            2001        234
+       102 cpp prog   shilpa     latha            2002        365
+       103 java       shrikanth  surbhi           2003        145
+       104 data str   nirmala    shiva            2004         89
+       105 dot net    lekha      surya            2005        456
+
+4.display different publisher
+--->select distinct publisher from library;
+
+SQL> select distinct publisher from library;
+
+PUBLISHER
+----------
+latha
+surya
+surbhi
+shiva
+
+5.update price by 5%
+--->update library set price=(price+(price*5)/100);
+
+SQL> select * from library;
+
+       BID TITLE      AUTHOR     PUBLISHER         YOP      PRICE
+---------- ---------- ---------- ---------- ---------- ----------
+       100 c prog     shrikanth  shiva            2001        246
+       102 cpp prog   shilpa     latha            2002        383
+       103 java       shrikanth  surbhi           2003        152
+       104 data str   nirmala    shiva            2004         93
+       105 dot net    lekha      surya            2005        479
+
+6.delete an author
+--->delete from library where author ='nirmala'; 
+
+SQL> select * from library;
+
+       BID TITLE      AUTHOR     PUBLISHER         YOP      PRICE
+---------- ---------- ---------- ---------- ---------- ----------
+       100 c prog     shrikanth  shiva            2001        246
+       102 cpp prog   shilpa     latha            2002        383
+       103 java       shrikanth  surbhi           2003        152
+       105 dot net    lekha      surya            2005        479
+
+7.arrange in alphabetical order
+--->select * from library order by title asc;
+
+SQL> select * from library order by title asc;
+
+       BID TITLE      AUTHOR     PUBLISHER         YOP      PRICE
+---------- ---------- ---------- ---------- ---------- ----------
+       100 c prog     shrikanth  shiva            2001        246
+       102 cpp prog   shilpa     latha            2002        383
+       105 dot net    lekha      surya            2005        479
+       103 java       shrikanth  surbhi           2003        152
+
+
+8.price ranges between 100 and 300
+--->select * from library where price between 100 and 300;
+
+
+SQL> select * from library where price between 100 and 300;
+
+       BID TITLE      AUTHOR     PUBLISHER         YOP      PRICE
+---------- ---------- ---------- ---------- ---------- ----------
+       100 c prog     shrikanth  shiva            2001        246
+       103 java       shrikanth  surbhi           2003        152
+

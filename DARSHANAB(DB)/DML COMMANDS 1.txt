@@ -1,0 +1,35 @@
+DML COMMANDS
+
+1 CREATE TABLE COMMAND:TO CREAT A TABLE
+
+ SYNTAX: create table table_NAME (COL1 DATATYPE(size)keyType,col2 datatype(size),...);
+
+EX:
+---> CREATE TABLE STUDENT(REGNO NUMBER(5)PRIMARY KEY,NAME CHAR(20),ADDERSE VARCHAR(20),CONTACT NUMBER(10));
+
+==> DISCRPTION OF THE TABLE:
+SYNTAX:DESE TABLE_NAME;
+EX:
+  DESC STUDENT;
+
+2 ALTER COMMAND:
+  a]  ADD COMMANMD: add a new column in a table.
+       syntax:
+ 	 alter table TABLE_NAME add col_name dataType ;
+       EX: 
+	 ALTER TABLE STUDENT ADD EMAIL VARCHAR2(20);
+  b] RENAME COMMAND: we can change old column name to new column name and table.
+       syntax:
+	   alter table table_name rename oldcol to new col;
+       EX:
+	   alter table STUDENT RENAME COLUMN EMAIL TO EMAIL_ID;
+	   alter table STUDENT RENAME TO STU ; 
+	    
+3. DELETE A COLUMN :delete a particular column.
+      syntax:
+	alter table table_name drop col_name;
+      EX:
+	alter table student drop column email_id;
+        
+	
+  
